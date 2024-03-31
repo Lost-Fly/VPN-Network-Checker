@@ -47,3 +47,7 @@ It's designed to help maintain device uptime and promptly alert you to any disco
 - Ensure the server or machine is connected to your organization's VPN.
 ### Initiate Monitoring:
 - Once launched, the application will initiate device scanning, periodic checks, and Telegram notifications.
+### Alerts example:
+![image](https://github.com/Lost-Fly/VPN-Network-Checker/assets/114507453/58c7713b-1179-4359-a669-c055908dc891)
+
+
