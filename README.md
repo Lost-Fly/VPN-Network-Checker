@@ -11,7 +11,7 @@ It's designed to help maintain device uptime and promptly alert you to any disco
 - Periodic Monitoring: Regularly checks the availability of found devices.
 - Telegram Notifications: Pushes real-time alerts for device availability and unavailability.
 - WhiteList: Filters monitoring to a defined set of critical devices for focused attention.
-- Customizable Settings: Allows tailoring the application's behavior to specific needs.
+- Customizable Settings: Allows tailoring the application's behavior to specific needs updating the config.properties file
 
 ### Configurable Parameters (Config class):
 
@@ -27,8 +27,7 @@ It's designed to help maintain device uptime and promptly alert you to any disco
 ## Setup and Usage:
 
 1) Configure Settings:
-- Modify values in the Config class as needed.
-- Edit the HostsStorage class to specify devices for monitoring.
+- Modify values in the config.properties as needed.
 - Add your Telegram bot token and chat ID to application.properties.
 2)Compile JAR File:
 - Open a terminal in the project's root directory.
@@ -42,6 +41,8 @@ It's designed to help maintain device uptime and promptly alert you to any disco
 4) Run on Windows:
 - Open a terminal in the folder containing the JAR file.
 - Run: ```java -jar VPNnetworkChecker.jar```
+
+### Important! Compiled jar file and config.properties have to be placed in the same directory!
 
 5) Connect to VPN:
 - Ensure the server or machine is connected to your organization's VPN.
