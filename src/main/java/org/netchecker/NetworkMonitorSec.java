@@ -12,12 +12,12 @@ import java.util.concurrent.TimeUnit;
 
 import static org.netchecker.Config.*;
 
-public class NetworkMonitor {
+public class NetworkMonitorSec {
 
     private static final List<String> foundDevices = new ArrayList<>();
     private static final List<String> notFoundDevices = new ArrayList<>();
 
-    private static final HostsStorage hostsStorage = new HostsStorage();
+    private static final HostsService hostsStorage = new HostsService();
 
 
     public static void main(String[] args) throws IOException {
@@ -54,7 +54,7 @@ public class NetworkMonitor {
         // Schedule periodic checks for discovered devices
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
         scheduler.scheduleAtFixedRate(() -> {
-            for (String ipAddress : foundDevices) {
+            for (String ipAddress : hostsStorage.getWhiteList().keySet()) {
                 if (hostsStorage.getWhiteList().containsKey(ipAddress)) {
                     String deviceName = hostsStorage.getWhiteList().get(ipAddress);
                     try {
@@ -83,7 +83,7 @@ public class NetworkMonitor {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-//            System.out.printf(ATTEMPT_FAILED, attempt);
+            System.out.printf(ATTEMPT_FAILED, attempt);
         }
         return false;
     }
